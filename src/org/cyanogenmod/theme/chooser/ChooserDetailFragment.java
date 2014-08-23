@@ -227,7 +227,7 @@ public class ChooserDetailFragment extends Fragment implements LoaderManager.Loa
     public void onResume() {
         super.onResume();
         if (mService != null) {
-            mService.onClientResumed(this);
+            mService.onClientResumed(mPkgName, this);
         }
         refreshApplyButton();
     }
@@ -236,7 +236,7 @@ public class ChooserDetailFragment extends Fragment implements LoaderManager.Loa
     public void onPause() {
         super.onPause();
         if (mService != null) {
-            mService.onClientPaused(this);
+            mService.onClientPaused(mPkgName);
         }
     }
 
@@ -244,7 +244,7 @@ public class ChooserDetailFragment extends Fragment implements LoaderManager.Loa
     public void onDestroy() {
         super.onDestroy();
         if (mService != null) {
-            mService.onClientDestroyed(this);
+            mService.onClientDestroyed(mPkgName);
         }
     }
 
@@ -477,7 +477,7 @@ public class ChooserDetailFragment extends Fragment implements LoaderManager.Loa
         }
 
         //Determine if the apply button's progress
-        int progress = (mService == null) ? 0 : mService.getProgress();
+        int progress = (mService == null) ? 0 : mService.getProgress(mPkgName);
         if (progress != 0) {
             clip.setLevel(progress * 100);
             mApply.setText(R.string.applying);
