@@ -144,11 +144,7 @@ public class ChooserBrowseFragment extends Fragment
         switch(item.getItemId()) {
             case R.id.get_more_themes:
                 if (isThemeStoreInstalled()) {
-                    try {
-                        launchThemeStore();
-                    } catch (ActivityNotFoundException e) {
-                        launchGetThemesWebView();
-                    }
+                    launchThemeStore();
                 } else {
                     launchGetThemesWebView();
                 }
