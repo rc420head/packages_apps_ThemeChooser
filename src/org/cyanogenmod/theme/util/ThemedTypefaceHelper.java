@@ -89,18 +89,8 @@ public class ThemedTypefaceHelper {
 
         //Load the typefaces for sans-serif
         Family sanSerif = getFamily(FAMILY_SANS_SERIF);
-        if (mTypefaces[Typeface.NORMAL] == null) {
-            mTypefaces[Typeface.NORMAL] = loadSystemTypeface(sanSerif, Typeface.NORMAL);
-        }
-        if (mTypefaces[Typeface.BOLD] == null) {
-            mTypefaces[Typeface.BOLD] = loadSystemTypeface(sanSerif, Typeface.BOLD);
-        }
-        if (mTypefaces[Typeface.ITALIC] == null) {
-            mTypefaces[Typeface.ITALIC] = loadSystemTypeface(sanSerif, Typeface.ITALIC);
-        }
-        if (mTypefaces[Typeface.BOLD_ITALIC] == null) {
-            mTypefaces[Typeface.BOLD_ITALIC] = loadSystemTypeface(sanSerif, Typeface.BOLD_ITALIC);
-        }
+        mTypefaces[Typeface.NORMAL] = loadSystemTypeface(sanSerif, Typeface.NORMAL);
+        mTypefaces[Typeface.BOLD] = loadSystemTypeface(sanSerif, Typeface.BOLD);
         mIsLoaded = true;
     }
 
