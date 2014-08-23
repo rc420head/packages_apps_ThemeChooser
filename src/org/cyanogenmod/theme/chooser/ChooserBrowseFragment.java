@@ -436,17 +436,12 @@ public class ChooserBrowseFragment extends Fragment
         }
 
         @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mIconViewGroup.removeAllViews();
-        }
-
-        @Override
         protected void onPostExecute(List<IconInfo> icons) {
             if (!mIconViewGroup.getTag().toString().equals(mPkgName) || icons == null) {
                 return;
             }
 
+            mIconViewGroup.removeAllViews();
             for (IconInfo info : icons) {
                 LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(0,
                         LayoutParams.WRAP_CONTENT, 1f);
